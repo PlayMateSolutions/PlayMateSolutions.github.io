@@ -179,11 +179,121 @@ section p {
 }
 
 nav a {
-    color:#fff; 
-    text-decoration:none; 
-    font-weight:500;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
 }
 nav a:hover {
   color: #dc2626;
   transition: color 0.2s ease;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+}
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #262626;
+  padding: 10px 24px;
+  z-index: 101;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Left side: hamburger + logo in one row */
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none; /* hidden on desktop */
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo img {
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  background: #fff;
+}
+.logo span {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+#nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+#nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Portal Button */
+.btn-portal {
+  border: 2px solid #fff;
+  background: #262626;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.05rem;
+  padding: 10px 22px;
+  border-radius: 24px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  #nav-links {
+    display: none; /* hide links initially */
+    flex-direction: column;
+    background: #262626;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    gap: 12px;
+    width: 200px;
+  }
+  #nav-links a {
+    padding: 8px 12px;
+    display: block;
+  }
 }
