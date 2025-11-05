@@ -1,0 +1,189 @@
+/* --- Base Styles (from your original) --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+}
+header {
+  background: #262626;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+header p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+.btn {
+  display: inline-block;
+  background: #dc2626;
+  color: #fff;
+  padding: 14px 28px;
+  margin: 5px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  border: 2px solid transparent;
+}
+.btn:hover {
+  background: #fff;
+  color: #dc2626;
+  border: 2px solid #dc2626;
+  transform: translateY(-3px);
+}
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background: #fff;
+  color: #262626;
+}
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+footer {
+  background: #262626;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #dc2626;
+}
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #262626;
+}
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #262626;
+}
+section p {
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  font-size: 1.1rem;
+}
+
+/* --- New Styles for Feature Showcase --- */
+.feature-showcase {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  text-align: left;
+  margin-top: 60px;
+}
+.feature-showcase:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.feature-text {
+  flex: 1;
+}
+.feature-text ul {
+  list-style: none;
+  padding: 0;
+}
+.feature-text ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 30px;
+}
+.feature-text ul li::before {
+  content: "✔";
+  color: #dc2626;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+.feature-image {
+  flex: 1;
+}
+.feature-image img {
+  max-width: 65%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+.card {
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+  color: #262626;
+  text-align: left;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+.card p {
+  font-size: 1rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  header p {
+    font-size: 1.1rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .feature-showcase,
+  .feature-showcase:nth-child(even) {
+    flex-direction: column;
+  }
+  .feature-text {
+    text-align: center;
+  }
+  .feature-text ul {
+    text-align: left;
+    display: inline-block;
+  }
+}
+
+nav a {
+    color:#fff; 
+    text-decoration:none; 
+    font-weight:500;
+}
+nav a:hover {
+  color: #dc2626;
+  transition: color 0.2s ease;
+}

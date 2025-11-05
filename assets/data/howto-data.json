@@ -1,0 +1,23 @@
+[
+  {
+    "id": "register",
+    "title": "How to Register Your Gym?",
+    "steps": [
+      "1. Open the official [GymMate Registration Form](https://docs.google.com/forms/d/e/1FAIpQLScZL9RPcd-EWs88e1ufGWSsRba5s7fANOGbrLJIvaB2PNcJ_w/viewform).\n\n2. Fill in your gym name, address, and contact number.\n\n3. Submit the form — you will receive further instructions within **24 hours**.\n\n4. Once we configure the setup for your gym, you’ll hear from us with your personalized Google Sheet link."
+    ]
+  },
+  {
+    "id": "onboarding",
+    "title": "How to Finish Onboarding?",
+    "steps": [
+      "1. Open the [GymMate Portal](https://app.gymmate.co.in/).\n\n2. Log in using your Gmail account.\n\n3. After logging in, you’ll be redirected to the Settings screen.\n\n4. Click **Select Spreadsheet** — this will open Google Drive. You’ll see a sheet named after your gym; please select it.\n\n5. Click **Save** on the Settings screen.\n\n6. Navigate to the Members screen.\n\n7. Click the **Refresh** button.\n\n8. If you see a member named “Unknown”, your setup is complete, and you’ve been successfully onboarded.\n\n\n📽️ Watch this short tutorial for guidance: [YouTube Short](https://youtube.com/shorts/5rWE82An-dg?feature=share)"
+    ]
+  },
+  {
+    "id": "settings",
+    "title": "How to Configure Gym Settings",
+    "steps": [
+      "## How to Configure Gym Settings\n\n\n1. **Linked Spreadsheet:**\n   - Click **Select Spreadsheet** to choose your gym's Google Sheet.\n   - If a sheet is already linked, click the edit icon to select a different one.\n\n2. **Club ID:**\n   - Your Club ID is displayed here. This is used internally by the system.\n\n3. **App Settings:**\n   - **Currency:** Select your preferred currency from the dropdown.\n   - **Monthly Fees:** Enter the standard monthly membership fee.\n   - **Billing Cycle:** Choose the type of membership period:\n     - **Floating:** The period starts from the current date and lasts until the same date in the next month.\n     - **Monthly:** The period starts from the first day of the current month and ends on the last day of the current month.\n   - **Language:** Select the app language (English or Tamil)."
+    ]
+  }
+]

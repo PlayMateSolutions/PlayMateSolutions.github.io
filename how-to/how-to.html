@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How To | GymMate</title>
+  <link rel="icon" href="assets/playmate-icon-red-bg.png" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+      color: #222;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #262626;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    header img {
+      height: 44px;
+      width: 44px;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    header nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.18s ease;
+    }
+
+    .nav-link:hover {
+      color: #dc2626;
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 100px 24px 60px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .howto-item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 16px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .howto-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 18px 24px;
+      transition: background 0.2s;
+    }
+
+    .howto-header:hover {
+      background: #f2f2f2;
+    }
+
+    .howto-header h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .arrow {
+      transition: transform 0.25s ease;
+      font-size: 1.2rem;
+      color: #777;
+    }
+
+    .arrow.open {
+      transform: rotate(90deg);
+    }
+
+    .steps {
+      margin: 0;
+      padding: 0 24px 16px 48px;
+      display: none;
+    }
+
+    .steps.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+      background: #fafafa;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div style="display:flex; align-items:center;">
+      <img src="../assets/playmate-icon-red-bg.png" alt="GymMate Logo" />
+      <span style="font-size:1.5rem; font-weight:bold; margin-left:12px;">GymMate</span>
+    </div>
+    <nav>
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="how-to.html" class="nav-link">How To</a>
+      <a href="../faq.html" class="nav-link">FAQ</a>
+      <a href="../about.html" class="nav-link">About Us</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>How To Use GymMate</h1>
+    <div id="howto-container">Loading...</div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> GymMate. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    async function loadHowTo() {
+      try {
+        const response = await fetch("../assets/data/howto-data.json");
+        const howTos = await response.json();
+        const container = document.getElementById("howto-container");
+        container.innerHTML = "";
+
+        howTos.forEach((item) => {
+          const div = document.createElement("div");
+          div.className = "howto-item";
+
+          div.innerHTML = `
+            <div class="howto-header">
+              <h2 style="font-size:20px;">${item.title}</h2>
+              <span class="arrow">▶</span>
+            </div>
+            <div class="steps">
+              ${item.steps.map(step => `<p>${marked.parse(step)}</p>`).join("")}
+            </div>
+          `;
+
+          const header = div.querySelector(".howto-header");
+          const arrow = div.querySelector(".arrow");
+          const steps = div.querySelector(".steps");
+
+          header.addEventListener("click", () => {
+            steps.classList.toggle("active");
+            arrow.classList.toggle("open");
+          });
+
+          container.appendChild(div);
+        });
+      } catch (e) {
+        console.log(e)
+        document.getElementById("howto-container").innerHTML =
+          "<p>Failed to load how-to guides. Please try again later.</p>";
+      }
+    }
+
+    loadHowTo();
+  </script>
+</body>
+</html>
