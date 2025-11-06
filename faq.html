@@ -1,58 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coming Soon</title>
   <style>
+    html,
     body {
+      height: 100%;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f9f9f9;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #262626;
-      text-align: center;
+      flex-direction: column;
     }
 
-    .coming-soon {
-      max-width: 500px;
-      padding: 40px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #dc2626;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    a {
-      text-decoration: none;
-      color: #fff;
-      background: #dc2626;
-      padding: 12px 24px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-      font-weight: bold;
-    }
-
-    a:hover {
-      background: #b91c1c;
+    body>footer {
+      margin-top: auto;
     }
   </style>
+
+  <link rel="stylesheet" href="/common.css">
+
+  <script>
+    async function includeHTML(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      console.log(res);
+      el.innerHTML = await res.text();
+    }
+    document.addEventListener("DOMContentLoaded", async () => {
+      includeHTML('header', '/header.html');
+      includeHTML('footer', '/footer.html');
+    });
+  </script>
 </head>
+
 <body>
+  <div id="header"></div>
 
   <div class="coming-soon">
     <h1>Coming Soon!</h1>
@@ -60,5 +44,7 @@
     <a href="index.html">Go Back Home</a>
   </div>
 
+  <div id="footer" class="footer"></div>
 </body>
+
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How To | GymMate</title>
-  <link rel="icon" href="assets/playmate-icon-red-bg.png" />
+  <link rel="icon" href="/assets/playmate-icon-red-bg.png" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -119,15 +119,6 @@
       from { opacity: 0; transform: translateY(-4px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    footer {
-      text-align: center;
-      color: #777;
-      padding: 20px;
-      font-size: 0.9rem;
-      border-top: 1px solid #eee;
-      background: #fafafa;
-    }
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -141,9 +132,8 @@
     }
     document.addEventListener("DOMContentLoaded", async () => {      
       includeHTML('header', '/header.html');
-      // includeHTML('footer', '/footer.html');
+      includeHTML('footer', '/footer.html');
 
-      document.getElementById("year").textContent = new Date().getFullYear();
       loadHowTo();
     });
     
@@ -187,6 +177,8 @@
       }
     }
   </script>
+
+  <link rel="stylesheet" href="/../common.css">
 </head>
 
 <body>  
@@ -198,8 +190,6 @@
     <div id="howto-container">Loading...</div>
   </main>
 
-  <footer>
-    &copy; <span id="year"></span> GymMate. All rights reserved.
-  </footer>  
+  <div id="footer"></div>
 </body>
 </html>
