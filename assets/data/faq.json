@@ -8,6 +8,14 @@
     "answer": "Yes! GymMate is completely free to use — no trials, no hidden fees, and no credit card required."
   },
   {
+    "question": "How does GymMate stay 100% free?",
+    "answer": "GymMate securely stores all your data in your own Google Sheet. This eliminates expensive server and database costs, allowing the app to remain free forever."
+  },
+  {
+    "question": "Who built GymMate and Why?",
+    "answer": "GymMate was built by a software professional and gym owner to solve real-world challenges faced in daily gym operations. It’s a passion project, not a corporate product. You can read more about the creator in the about page"
+  },
+  {
     "question": "Can I use GymMate on mobile?",
     "answer": "Yes. GymMate works great on mobile browsers, you can install it in your phone by cliking on the install app button in the side menu and will soon have a dedicated Android app."
   },
