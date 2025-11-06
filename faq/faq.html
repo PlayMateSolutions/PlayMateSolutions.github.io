@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faq</title>
+
+  <link rel="stylesheet" href="faq.css">
+  <link rel="stylesheet" href="/common.css">
+
+  <script>
+    async function includeHTML(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      console.log(res);
+      el.innerHTML = await res.text();
+    }
+
+    async function loadFaq() {
+      const container = document.getElementById("faq-container");
+
+      try {
+        const response = await fetch("/assets/data/faq.json");
+        if (!response.ok) throw new Error("Failed to load FAQ data");
+        const faqs = await response.json();
+
+        faqs.forEach(item => {
+          const faq = document.createElement("div");
+          faq.className = "faq-item";
+
+          faq.innerHTML = `
+        <button class="faq-question">${item.question}</button>
+        <div class="faq-answer">${item.answer}</div>
+      `;
+          container.appendChild(faq);
+        });
+
+        // toggle open/close
+        document.querySelectorAll(".faq-question").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const item = btn.parentElement;
+            item.classList.toggle("open");
+            btn.classList.toggle("active");
+          });
+        });
+      } catch (err) {
+        container.innerHTML = `<p>⚠️ Failed to load FAQ content.</p>`;
+        console.error(err);
+      }
+
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      includeHTML('header', '/header.html');
+      includeHTML('footer', '/footer.html');
+
+      loadFaq();
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div id="faq-container"></div>
+  </section>
+
+  <div id="footer" class="footer"></div>
+</body>
+
+</html>
