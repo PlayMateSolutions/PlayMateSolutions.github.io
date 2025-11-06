@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How To | GymMate</title>
+  <link rel="icon" href="/assets/playmate-icon-red-bg.png" />
+  <style>
+
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    async function includeHTML(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      console.log(res);
+      el.innerHTML = await res.text();
+    }
+    document.addEventListener("DOMContentLoaded", async () => {
+      includeHTML('header', '/header.html');
+      includeHTML('footer', '/footer.html');
+    });
+  </script>
+
+  <link rel="stylesheet" href="/../common.css">
+  <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <main>
+    <section class="about-section">
+      <h3>💡 Why I Built GymMate</h3>
+      <p>
+        I am a gym owner myself. Earlier, members used to sign in using a physical register, which made it impossible
+        for me to track
+        attendance or check whose membership had expired.
+        Now with <strong>GymMate</strong>, I can easily see who’s visiting the gym, whose membership has expired, and
+        even send payment
+        reminders.
+        It has made managing my gym simple and transparent, even from miles away.
+      </p>
+
+
+      <div class="about-content">
+        <div class="about-card">
+          <h3>🏋️ Our Mission</h3>
+          <p>
+            To empower gym owners and trainers with digital tools that help them focus more on
+            training people and less on paperwork. I believe that technology should support
+            fitness, not complicate it.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>👨‍💻 About the Creator</h3>
+          <p>
+            GymMate is developed and maintained by <strong>Ramaraj T</strong>, an IT manager and
+            fitness enthusiast who runs <strong>Muscle Madness Fitness Center</strong> in his village.
+            The app was born out of a personal need to track gym attendance and fees
+            efficiently without spending on cloud servers.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>🌍 Future Vision</h3>
+          <p>
+            The plan is to keep GymMate free and open for all. Future updates will include
+            automatic WhatsApp notifications, member logins, and online payment options —
+            all designed with simplicity and affordability in mind.
+          </p>
+        </div>
+      </div>
+
+      <a href="https://app.gymmate.co.in" style="margin-top: 50px;" class="btn">Explore the App</a>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+</body>
+
+</html>
