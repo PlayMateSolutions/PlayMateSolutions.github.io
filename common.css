@@ -1,27 +1,15 @@
-/* --- Base Styles (from your original) --- */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  color: #333;
-  background: #f9f9f9;
-}
-.top-content {
+header {
   background: #262626;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
   position: relative;
 }
-
-.top-content h1 {
+header h1 {
   font-size: 3rem;
   margin-bottom: 15px;
 }
-
-.top-content p {
+header p {
   font-size: 1.3rem;
   margin-bottom: 30px;
   max-width: 600px;
@@ -93,46 +81,6 @@ section p {
   font-size: 1.1rem;
 }
 
-/* --- New Styles for Feature Showcase --- */
-.feature-showcase {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  text-align: left;
-  margin-top: 60px;
-}
-.feature-showcase:nth-child(even) {
-  flex-direction: row-reverse;
-}
-.feature-text {
-  flex: 1;
-}
-.feature-text ul {
-  list-style: none;
-  padding: 0;
-}
-.feature-text ul li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  position: relative;
-  padding-left: 30px;
-}
-.feature-text ul li::before {
-  content: "✔";
-  color: #dc2626;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-}
-.feature-image {
-  flex: 1;
-}
-.feature-image img {
-  max-width: 65%;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
 .card-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -167,17 +115,6 @@ section p {
   h2 {
     font-size: 2rem;
   }
-  .feature-showcase,
-  .feature-showcase:nth-child(even) {
-    flex-direction: column;
-  }
-  .feature-text {
-    text-align: center;
-  }
-  .feature-text ul {
-    text-align: left;
-    display: inline-block;
-  }
 }
 
 nav a {
@@ -204,6 +141,34 @@ nav {
   align-items: center;
   gap: 22px;
 }
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #262626;
+  padding: 10px 24px;
+  z-index: 101;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Left side: hamburger + logo in one row */
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none; /* hidden on desktop */
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
 
 /* Logo */
 .logo {
@@ -229,8 +194,11 @@ nav {
 #nav-links {
   display: flex;
   gap: 22px;
+  margin-right: 12px;
   align-items: center;
+  margin-left: auto;
 }
+
 #nav-links a {
   color: #fff;
   text-decoration: none;

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GymMate – 100% Free Gym Management App</title>
 
-   <!-- 🔍 Primary SEO -->
-  <meta name="description" content="GymMate is a 100% free gym management app built for gym owners. Manage members, track payments, and monitor attendance — all synced with your Google Sheets.">
-  <meta name="keywords" content="free gym management app, gym software india, gym attendance tracker, gym member management, google sheets gym app, gymmate app">
+  <!-- 🔍 Primary SEO -->
+  <meta name="description"
+    content="GymMate is a 100% free gym management app built for gym owners. Manage members, track payments, and monitor attendance — all synced with your Google Sheets.">
+  <meta name="keywords"
+    content="free gym management app, gym software india, gym attendance tracker, gym member management, google sheets gym app, gymmate app">
   <meta name="author" content="GymMate Solutions, Chennai, India">
 
   <!-- 📱 Icons -->
@@ -18,24 +21,25 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
 
-   <!-- Google tag (Analytics + Ads) -->
+  <!-- Google tag (Analytics + Ads) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CF07DZEZVR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-  
+
     // Google Analytics 4
     gtag('config', 'G-CF07DZEZVR');
-  
+
     // Google Ads
     gtag('config', 'AW-969377157');
   </script>
 
- <!-- 🌐 Open Graph (for LinkedIn, Facebook, WhatsApp) -->
+  <!-- 🌐 Open Graph (for LinkedIn, Facebook, WhatsApp) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="GymMate – Free Gym Management App">
-  <meta property="og:description" content="No trials. No hidden fees. Manage members, track payments, and monitor attendance — all synced with Google Sheets.">
+  <meta property="og:description"
+    content="No trials. No hidden fees. Manage members, track payments, and monitor attendance — all synced with Google Sheets.">
   <meta property="og:image" content="https://gymmate.co.in/assets/banner.png">
   <meta property="og:url" content="https://gymmate.co.in">
   <meta property="og:site_name" content="GymMate">
@@ -43,7 +47,8 @@
   <!-- 🐦 Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GymMate – Free Gym Management App">
-  <meta name="twitter:description" content="A free gym management app built for gym owners. Manage members, attendance, and payments effortlessly.">
+  <meta name="twitter:description"
+    content="A free gym management app built for gym owners. Manage members, attendance, and payments effortlessly.">
   <meta name="twitter:image" content="https://gymmate.co.in/assets/banner.png">
 
   <!-- 📊 Schema.org (Google Rich Snippet) -->
@@ -70,60 +75,47 @@
   </script>
 
   <script>
-  function toggleMenu() {
-    const nav = document.getElementById('nav-links');
-    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-  }
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+
+  <script>
+    async function includeHTML(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      console.log(res);
+      el.innerHTML = await res.text();
+    }
+    document.addEventListener("DOMContentLoaded", async () => {
+      includeHTML('header', '/header.html');
+      // includeHTML('footer', '/footer.html');
+    });
+
   </script>
 
   <!-- ✅ Optional: Canonical URL -->
   <link rel="canonical" href="https://gymmate.co.in">
   <link rel="stylesheet" href="index.css">
-  
+  <link rel="stylesheet" href="/common.css">
 </head>
+
 <body>
-  <header>
-    <div class="header-container">
-      <!-- Left side: Hamburger + Logo -->
-      <div class="left-header">
-        <!-- Hamburger Icon (mobile only) -->
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div id="header"></div>
 
-        <!-- Logo -->
-        <div class="logo">
-          <img src="assets/playmate-icon-red-bg.png" alt="GymMate Logo">
-          <span>GymMate</span>
-        </div>
-      </div>
-
-      <!-- Navigation Links (collapsible on mobile) -->
-      <nav id="nav-links">
-        <a href="how-to/how-to.html">How To</a>
-        <a href="faq.html">FAQ</a>
-        <a href="about.html">About Us</a>
-      </nav>
-
-      <!-- Always visible Portal button -->
-      <a href="https://app.gymmate.co.in" target="_blank" rel="noopener"
-        class="btn btn-secondary"
-        style="border:2px solid #fff; background:#262626; color:#fff; font-weight:bold; font-size:1.05rem; padding:10px 22px; border-radius:24px; box-shadow:0 2px 12px rgba(0,0,0,0.10); transition:background 0.2s, color 0.2s;">
-        Portal
-      </a>
-    </div>
-
-    <!-- Header Content -->
-    <div class="header-content">
-      <h1>Finally, a gym management app that's actually <span>free</span></h1>
-      <p>No trials. No hidden fees. No credit card required...</p>
-      <a href="#" class="btn">Start for Free</a>
-      <a href="#features" class="btn btn-secondary">See Features</a>
-    </div>
-  </header>
+  <!-- Header Content -->
+  <div class="top-content">
+    <h1>Finally, a gym management app that's actually <span>free</span></h1>
+    <p>No trials. No hidden fees. No credit card required...</p>
+    <a href="#" class="btn">Start for Free</a>
+    <a href="#features" class="btn btn-secondary">See Features</a>
+  </div>
 
   <section id="for-gym-owners">
     <h1>Are you a gym owner?</h1>
     <p>Are you still tracking user attendance and payments in registers?<br>
-    Don't want to spend too much on fancy gym management software?</p>
+      Don't want to spend too much on fancy gym management software?</p>
     <p>Then you are in luck! GymMate is here to help you streamline your operations without breaking the bank.</p>
   </section>
 
@@ -132,11 +124,13 @@
     <div class="card-section">
       <div class="card">
         <h3>💡 No Server Costs</h3>
-        <p>GymMate securely stores all your data in your own Google Sheet. This eliminates expensive server and database costs, allowing the app to be free forever.</p>
+        <p>GymMate securely stores all your data in your own Google Sheet. This eliminates expensive server and database
+          costs, allowing the app to be free forever.</p>
       </div>
       <div class="card">
         <h3>💪 By a Gym Owner, For Gym Owners</h3>
-        <p>As a software professional and a gym owner myself, I built this app to solve real-world problems I faced. It's a passion project, not a corporate one.</p>
+        <p>As a software professional and a gym owner myself, I built this app to solve real-world problems I faced.
+          It's a passion project, not a corporate one.</p>
       </div>
     </div>
   </section>
@@ -159,7 +153,7 @@
       </div>
     </div>
 
-     <div class="feature-showcase">
+    <div class="feature-showcase">
       <div class="feature-image">
         <img src="assets/member-detail.png" alt="GymMate Member Detail Screen">
       </div>
@@ -199,7 +193,7 @@
           <li>Drill down to see individual check-in/check-out times for any member.</li>
         </ul>
       </div>
-    </div>   
+    </div>
 
     <div class="feature-showcase">
       <div class="feature-image">
@@ -208,13 +202,17 @@
       <div class="feature-text">
         <h3>Simple & Seamless Attendance</h3>
         <ul>
-          <li>The system works with a dedicated companion app. Just install it on any old Android phone or tablet at your gym's entrance</li>
-          <li>Members simply enter their registered phone number or Member ID to log their attendance instantly. It's fast, easy, and reliable.</li>
+          <li>The system works with a dedicated companion app. Just install it on any old Android phone or tablet at
+            your gym's entrance</li>
+          <li>Members simply enter their registered phone number or Member ID to log their attendance instantly. It's
+            fast, easy, and reliable.</li>
           <li>Syncs gym membership and attendance data in real time.</li>
           <li>Gives you a clear idea about how many expired members are visiting the gym.</li>
         </ul>
-        <a href="https://play.google.com/store/apps/details?id=com.gymmate.companion" target="_blank" rel="noopener" style="display:inline-block; margin-top:18px;">
-          <img src="assets/get-it-on-playstore.png" alt="Get it on Google Play" style="height:48px; vertical-align:middle;">
+        <a href="https://play.google.com/store/apps/details?id=com.gymmate.companion" target="_blank" rel="noopener"
+          style="display:inline-block; margin-top:18px;">
+          <img src="assets/get-it-on-playstore.png" alt="Get it on Google Play"
+            style="height:48px; vertical-align:middle;">
         </a>
       </div>
     </div>
@@ -223,13 +221,19 @@
   <section style="background:#dc2626; color:#fff;">
     <h2 style="color:#fff;">Ready to make gym management effortless?</h2>
     <p>Join hundreds of gym owners who are simplifying their work with a completely free tool.</p>
-    <p>Fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLScZL9RPcd-EWs88e1ufGWSsRba5s7fANOGbrLJIvaB2PNcJ_w/viewform" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline; font-weight:bold;">Google Form</a> to get started for free.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScZL9RPcd-EWs88e1ufGWSsRba5s7fANOGbrLJIvaB2PNcJ_w/viewform" class="btn" target="_blank" rel="noopener" style="background:#fff; color:#dc2626; border:1px solid #dc2626;">Get Started for Free</a>
+    <p>Fill out this <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLScZL9RPcd-EWs88e1ufGWSsRba5s7fANOGbrLJIvaB2PNcJ_w/viewform"
+        target="_blank" rel="noopener" style="color:#fff; text-decoration:underline; font-weight:bold;">Google Form</a>
+      to get started for free.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScZL9RPcd-EWs88e1ufGWSsRba5s7fANOGbrLJIvaB2PNcJ_w/viewform"
+      class="btn" target="_blank" rel="noopener" style="background:#fff; color:#dc2626; border:1px solid #dc2626;">Get
+      Started for Free</a>
   </section>
 
   <section style="background:#262626; color:#fff; padding:40px 20px 20px 20px;">
     <h2 style="color:#fff;">Contact Us</h2>
-    <p>Have questions or need help? Email us at <a href="mailto:contact@gymmate.co.in" style="color:#fff; text-decoration:underline;">contact@gymmate.co.in</a></p>
+    <p>Have questions or need help? Email us at <a href="mailto:contact@gymmate.co.in"
+        style="color:#fff; text-decoration:underline;">contact@gymmate.co.in</a></p>
   </section>
 
   <footer>
@@ -241,4 +245,5 @@
   </footer>
 
 </body>
+
 </html>

@@ -131,31 +131,22 @@
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div style="display:flex; align-items:center;">
-      <img src="../assets/playmate-icon-red-bg.png" alt="GymMate Logo" />
-      <span style="font-size:1.5rem; font-weight:bold; margin-left:12px;">GymMate</span>
-    </div>
-    <nav>
-      <a href="../index.html" class="nav-link">Home</a>
-    </nav>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-    <h1>How To Use GymMate</h1>
-    <div id="howto-container">Loading...</div>
-  </main>
-
-  <footer>
-    &copy; <span id="year"></span> GymMate. All rights reserved.
-  </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    async function includeHTML(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      console.log(res);
+      el.innerHTML = await res.text();
+    }
+    document.addEventListener("DOMContentLoaded", async () => {      
+      includeHTML('header', '/header.html');
+      // includeHTML('footer', '/footer.html');
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+      loadHowTo();
+    });
+    
 
     async function loadHowTo() {
       try {
@@ -195,8 +186,20 @@
           "<p>Failed to load how-to guides. Please try again later.</p>";
       }
     }
-
-    loadHowTo();
   </script>
+</head>
+
+<body>  
+  <div id="header"></div>
+
+  <!-- Main Content -->
+  <main>
+    <h1>How To Use GymMate</h1>
+    <div id="howto-container">Loading...</div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> GymMate. All rights reserved.
+  </footer>  
 </body>
 </html>
