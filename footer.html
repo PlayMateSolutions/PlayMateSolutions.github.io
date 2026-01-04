@@ -2,7 +2,35 @@
     .footer {
         margin-top: auto;
     }
+    
+    .footer-links a,
+    .contact-info a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .footer-links a:hover,
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+    
+    .contact-info {
+        margin-top: 15px;
+    }
+    
+    .contact-info a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-right: 20px;
+    }
+    
+    .contact-icon {
+        font-size: 1.2em;
+    }
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <footer style="margin-top: auto;">
     <div class="footer-links">
@@ -10,4 +38,17 @@
         <a href="/terms.html">Terms</a>
     </div>
     <p>&copy; 2025 GymMate Solutions | Chennai, India</p>
+    <div class="contact-info">
+        <p>
+            <strong>Contact Us:</strong><br>
+            <a href="mailto:contact@gymmate.co.in">
+                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                contact@gymmate.co.in
+            </a>
+            <a href="https://wa.me/917200360683" target="_blank">
+                <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                +91 7200360683
+            </a>
+        </p>
+    </div>
 </footer>
