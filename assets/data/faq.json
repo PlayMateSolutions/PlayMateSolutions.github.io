@@ -25,10 +25,10 @@
   },
   {
     "question": "How can I edit or delete a member?",
-    "answer": "Edit/Delete member is still not implemented yet. For now, you can open the sheet and edit it manually. Be cautious when working in the sheet directly, or contact me for support."
+    "answer": "In the member list page, click on a member to open the member details dialog. From there, you can edit the member's information or delete the member entirely by using the edit/delete buttons in the top of the screen."
   },
   {
-    "question": "I am storing my member details including women information. Is the data secure?",
+    "question": "I am storing my member details including women's information. Is the data secure?",
     "answer": "The data is saved in a Google Sheet which only you have access to, so it’s secure."
   },
   {
@@ -38,5 +38,9 @@
   {
     "question": "How do you earn money from this app?",
     "answer": "I do not earn any money as of now directly from this app. However, if you feel this app is useful, I welcome donations. Any donation can be sent via my BuyMeACoffee link. If you are in India, you can directly pay me via UPI. Any donation, however small, is welcome — be it $1 or ₹100."
+  },
+  {
+    "question": "Why do I have to log in frequently?",
+    "answer": "GymMate does not use a dedicated server. To keep the app 100% free, all session information is stored locally in your browser and managed through Google services. Due to Google’s security restrictions, these sessions automatically expire after about one hour. When the session expires, you’ll need to log in again to continue using the app."
   }
 ]
