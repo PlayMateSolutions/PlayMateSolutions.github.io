@@ -28,6 +28,18 @@
     "answer": "In the member list page, click on a member to open the member details dialog. From there, you can edit the member's information or delete the member entirely by using the edit/delete buttons in the top of the screen."
   },
   {
+    "question": "What does the unknown member mean?",
+    "answer": "An Unknown Member is a temporary entry created for attendance tracking. In the companion app, users can log attendance by entering either their phone number or their member ID. If a new person who is not in the system yet enters a phone number, the system cannot find a valid ID. In such cases, the attendance is recorded as an Unknown Member."
+  },
+  {
+    "question": "Am I allowed to delete the unknown member?",
+    "answer": "No. You cannot delete or edit Unknown Member details from the app."
+  },
+  {
+    "question": "Am I allowed to edit data in the sheet directly?",
+    "answer": "Yes, editing data directly in the sheet is allowed. However, it is strongly recommended to use the app to enter or update member and payment details. The app expects the data to follow a specific format (such as time values and IDs). If the data does not follow this format, the system may not be able to process it correctly."
+  },
+  {
     "question": "I am storing my member details including women's information. Is the data secure?",
     "answer": "The data is saved in a Google Sheet which only you have access to, so it’s secure."
   },
