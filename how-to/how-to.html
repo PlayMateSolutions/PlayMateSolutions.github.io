@@ -115,6 +115,21 @@
       animation: fadeIn 0.3s ease;
     }
 
+    .video-wrapper {
+      margin: 20px 0 8px;
+      max-width: 320px;
+      aspect-ratio: 9 / 16;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-4px); }
       to { opacity: 1; transform: translateY(0); }
@@ -138,6 +153,15 @@
     });
     
 
+    function getYoutubeEmbedUrl(videoUrl) {
+      if (!videoUrl) return "";
+      const shortsMatch = videoUrl.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{11})/);
+      const watchMatch = videoUrl.match(/[?&]v=([A-Za-z0-9_-]{11})/);
+      const directMatch = videoUrl.match(/youtu\.be\/([A-Za-z0-9_-]{11})/);
+      const videoId = shortsMatch?.[1] || watchMatch?.[1] || directMatch?.[1];
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : "";
+    }
+
     async function loadHowTo() {
       try {
         const response = await fetch("../assets/data/howto-data.json");
@@ -148,6 +172,7 @@
         howTos.forEach((item) => {
           const div = document.createElement("div");
           div.className = "howto-item";
+          const embedUrl = getYoutubeEmbedUrl(item.videoUrl);
 
           div.innerHTML = `
             <div class="howto-header">
@@ -156,6 +181,16 @@
             </div>
             <div class="steps">
               ${item.steps.map(step => `<p>${marked.parse(step)}</p>`).join("")}
+              ${embedUrl ? `
+                <div class="video-wrapper">
+                  <iframe
+                    src="${embedUrl}"
+                    title="${item.title} video tutorial"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                  </iframe>
+                </div>` : ""}
             </div>
           `;
 
