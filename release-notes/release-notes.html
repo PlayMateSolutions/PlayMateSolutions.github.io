@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Release Notes | GymMate</title>
+  <link rel="icon" href="/assets/playmate-icon-red-bg.png" />
+
+  <link rel="stylesheet" href="release-notes.css">
+  <link rel="stylesheet" href="/common.css">
+
+  <script>
+    async function includeHTML(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      el.innerHTML = await res.text();
+    }
+
+    async function loadReleaseNotes() {
+      const container = document.getElementById("release-container");
+
+      try {
+        const response = await fetch("/assets/data/release-notes.json");
+        if (!response.ok) throw new Error("Failed to load release notes");
+        const releases = await response.json();
+
+        releases.forEach(release => {
+          const item = document.createElement("div");
+          item.className = "release-item";
+
+          const header = document.createElement("div");
+          header.className = "release-header";
+
+          const version = document.createElement("span");
+          version.className = "release-version";
+          version.textContent = `Version ${release.version}`;
+
+          const date = document.createElement("span");
+          date.className = "release-date";
+          date.textContent = new Date(release.date).toLocaleDateString("en-IN", {
+            day: "numeric", month: "short", year: "numeric"
+          });
+
+          header.append(version, date);
+
+          const list = document.createElement("ul");
+          release.changes.forEach(change => {
+            const li = document.createElement("li");
+            li.textContent = change;
+            list.appendChild(li);
+          });
+
+          item.append(header, list);
+          container.appendChild(item);
+        });
+      } catch (err) {
+        container.textContent = "Failed to load release notes.";
+        console.error(err);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (new URLSearchParams(location.search).has("embed")) {
+        document.body.classList.add("embed");
+      }
+      includeHTML('header', '/header.html');
+      includeHTML('footer', '/footer.html');
+      loadReleaseNotes();
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <section class="release-section">
+    <h2>Release Notes</h2>
+    <div id="release-container"></div>
+  </section>
+
+  <div id="footer" class="footer"></div>
+</body>
+
+</html>

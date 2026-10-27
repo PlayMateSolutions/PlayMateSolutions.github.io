@@ -1,0 +1,261 @@
+[
+  {
+    "version": "1.20.0",
+    "date": "2026-10-27",
+    "changes": [
+      "Share your customer portal link from Settings.",
+      "Create a PIN for each customer, during customer creation or later, and share it from the member screen.",
+      "Club settings are now saved to your spreadsheet.",
+      "Release notes are available on the website, with a link from Settings."
+    ]
+  },
+  {
+    "version": "1.19.1",
+    "date": "2026-07-12",
+    "changes": [
+      "Expiry badge is back on attendance entries.",
+      "Open WhatsApp with a prefilled message from the member detail page.",
+      "Added a donation button.",
+      "Fixed a loading problem and a problem when updating attendance."
+    ]
+  },
+  {
+    "version": "1.19.0",
+    "date": "2026-07-12",
+    "changes": [
+      "Attendance policies: create, edit and manage reusable policies with preferred days and times.",
+      "Assign a policy to any member.",
+      "Policy violations are calculated and shown in the app.",
+      "Existing spreadsheets are migrated automatically."
+    ]
+  },
+  {
+    "version": "1.18.0",
+    "date": "2026-05-15",
+    "changes": [
+      "Income vs expenses report now has a monthly summary and breakdown.",
+      "See income and expenses by category and type.",
+      "See money flow by type and category.",
+      "Fixed theming issues."
+    ]
+  },
+  {
+    "version": "1.17.0",
+    "date": "2026-05-11",
+    "changes": [
+      "Filter payments by category and payment mode."
+    ]
+  },
+  {
+    "version": "1.16.1",
+    "date": "2026-04-19",
+    "changes": [
+      "Added GYD currency."
+    ]
+  },
+  {
+    "version": "1.16.0",
+    "date": "2026-04-05",
+    "changes": [
+      "Create a shareable attendance leaderboard for social media.",
+      "Export the income vs expenses report as a PDF.",
+      "Added a chart to the income vs expenses report.",
+      "Unknown members are no longer shown in the attendance leaderboard."
+    ]
+  },
+  {
+    "version": "1.15.1",
+    "date": "2026-04-01",
+    "changes": [
+      "The demo mode button is hidden when you already have a saved session."
+    ]
+  },
+  {
+    "version": "1.15.0",
+    "date": "2026-03-30",
+    "changes": [
+      "Demo mode: explore the app without signing in with Google."
+    ]
+  },
+  {
+    "version": "1.14.0",
+    "date": "2026-03-25",
+    "changes": [
+      "Choose SMS or WhatsApp for sending messages to members."
+    ]
+  },
+  {
+    "version": "1.13.0",
+    "date": "2026-03-22",
+    "changes": [
+      "Settings page is reorganised into clearer sections.",
+      "Onboarding detects an existing spreadsheet.",
+      "Data refreshes automatically after first-time onboarding."
+    ]
+  },
+  {
+    "version": "1.12.0",
+    "date": "2026-03-19",
+    "changes": [
+      "Customise the messages sent to members from a new Messages page.",
+      "WhatsApp links now use the phone code for your country.",
+      "The correct currency symbol is loaded for your country."
+    ]
+  },
+  {
+    "version": "1.11.0",
+    "date": "2026-03-08",
+    "changes": [
+      "Packages have their own page.",
+      "New onboarding completion screen.",
+      "Toggle income and expense chips in payments and reports.",
+      "Phone numbers are normalised before sending WhatsApp messages."
+    ]
+  },
+  {
+    "version": "1.10.1",
+    "date": "2026-02-21",
+    "changes": [
+      "You are asked to sign in again if Google Drive permission was not granted."
+    ]
+  },
+  {
+    "version": "1.10.0",
+    "date": "2026-02-15",
+    "changes": [
+      "Record custom payments.",
+      "Payment type and category are shown in the payment list.",
+      "Improved the payment list layout.",
+      "Payments sync as soon as a new one is added."
+    ]
+  },
+  {
+    "version": "1.9.0",
+    "date": "2026-02-09",
+    "changes": [
+      "New income vs expenses report.",
+      "Choose preset date ranges or a custom range.",
+      "Payments and expenses from the last 12 months are shown."
+    ]
+  },
+  {
+    "version": "1.8.0",
+    "date": "2026-01-17",
+    "changes": [
+      "Configure membership packages and choose one when adding a payment.",
+      "Added support pages and support details on the login screen.",
+      "Club name is now sent with analytics."
+    ]
+  },
+  {
+    "version": "1.7.1",
+    "date": "2026-01-12",
+    "changes": [
+      "All data refreshes on login.",
+      "Fixed an onboarding failure.",
+      "Added a clear data button on the login page.",
+      "The local database updates when a payment is recorded.",
+      "Companion app information is shown when there is no attendance data."
+    ]
+  },
+  {
+    "version": "1.7.0",
+    "date": "2025-12-29",
+    "changes": [
+      "New reports page.",
+      "Edit and delete members.",
+      "New About Us page.",
+      "Reuse the date range picker in the attendance page.",
+      "Attendance for unknown members shows only relevant entries."
+    ]
+  },
+  {
+    "version": "1.6.0",
+    "date": "2025-12-23",
+    "changes": [
+      "Self onboarding: set up your gym from the app.",
+      "Onboarding emails are sent after setup."
+    ]
+  },
+  {
+    "version": "1.5.1",
+    "date": "2025-11-30",
+    "changes": [
+      "Added Google Analytics."
+    ]
+  },
+  {
+    "version": "1.5.0",
+    "date": "2025-11-04",
+    "changes": [
+      "Select your currency symbol.",
+      "Set the default monthly fee for your club.",
+      "Choose a floating or monthly membership billing cycle.",
+      "The club ID is shown in Settings.",
+      "Period start and end dates are shown side by side.",
+      "Change the month for combo packages."
+    ]
+  },
+  {
+    "version": "1.4.0",
+    "date": "2025-10-29",
+    "changes": [
+      "Members and expenses are added through the Google Sheets API.",
+      "Improved the add member screen.",
+      "Place field is now an autocomplete.",
+      "Expense categories are prefilled."
+    ]
+  },
+  {
+    "version": "1.3.0",
+    "date": "2025-10-27",
+    "changes": [
+      "WhatsApp and call buttons on the member detail page.",
+      "Install button to add the app to your device.",
+      "Expired attendance is shown in red in the calendar.",
+      "Time to expiry is shown on attendance items.",
+      "Dates with no attendance are skipped, and attendance no longer reloads when you go back.",
+      "Payment events take precedence over attendance events."
+    ]
+  },
+  {
+    "version": "1.2.0",
+    "date": "2025-10-23",
+    "changes": [
+      "Members, payments and expenses are read directly from your Google Sheet and cached for faster loading.",
+      "The club ID is read from your Google Sheet.",
+      "Fixed duplicate expense logging."
+    ]
+  },
+  {
+    "version": "1.1.0",
+    "date": "2025-10-19",
+    "changes": [
+      "Pick the Google Spreadsheet to link, and see it in Settings.",
+      "Unknown members show their phone number and open the member detail from an attendance record.",
+      "New members get today as their expiry date."
+    ]
+  },
+  {
+    "version": "1.0.1",
+    "date": "2025-09-20",
+    "changes": [
+      "Payment reminders use your saved language.",
+      "Added a payment updated WhatsApp message.",
+      "Reduced the Google permissions the app asks for."
+    ]
+  },
+  {
+    "version": "1.0.0",
+    "date": "2025-09-13",
+    "changes": [
+      "Sign in with Google.",
+      "Manage members with search, sort and filters, including date of birth and gender.",
+      "Member detail page with attendance calendar and payment history.",
+      "Attendance screens with statistics and charts.",
+      "Record payments and expenses, and view them in a list and graph.",
+      "WhatsApp messages in English and Tamil.",
+      "Data refreshes automatically every 12 hours."
+    ]
+  }
+]
